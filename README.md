@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
     <a href="https://windmillui.com/dashboard-react">
       <img alt="Windmill Dashboard React" width="600" src=".github/windmill-dashboard-react.png">
@@ -192,3 +193,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# e-trafada
+>>>>>>> eaefcc946e118067758dc94fa85e3f83ee21484a
