@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
 // use lazy for better code splitting, a.k.a. load faster
-const Dashboard = lazy(() => import('../pages/Dashboard'))
+// const Dashboard = lazy(() => import('../pages/Dashboard'))
 const Forms = lazy(() => import('../pages/Forms'))
 const Cards = lazy(() => import('../pages/Cards'))
 const Charts = lazy(() => import('../pages/Charts'))
@@ -22,10 +22,10 @@ const Blank = lazy(() => import('../pages/Blank'))
  * `routes/sidebar.js`
  */
 const routes = [
-  {
-    path: '/dashboard', // the url
-    component: Dashboard, // view rendered
-  },
+  // {
+  //   path: '/dashboard', // the url
+  //   component: Dashboard, // view rendered
+  // },
   {
     path: '/forms',
     component: Forms,

@@ -26,6 +26,14 @@ import { ReactComponent as DropdownIcon } from './dropdown.svg'
 import { ReactComponent as OutlinePersonIcon } from './outlinePerson.svg'
 import { ReactComponent as OutlineCogIcon } from './outlineCog.svg'
 import { ReactComponent as OutlineLogoutIcon } from './outlineLogout.svg'
+import { ReactComponent as DashboardIcon } from './app-indicator.svg'
+import { ReactComponent as ProductIcon } from './box-seam.svg'
+import { ReactComponent as ReportIcon } from './clipboard-data.svg'
+import { ReactComponent as WarehouseIcon } from './house-door.svg'
+import { ReactComponent as ContactIcon } from './person-square.svg'
+import { ReactComponent as ExpensesIcon } from './receipt-cutoff.svg'
+import { ReactComponent as SalesIcon } from './tag.svg'
+import { ReactComponent as PurchasesIcon } from './cart3.svg'
 
 export {
   ButtonsIcon,
@@ -56,4 +64,12 @@ export {
   OutlinePersonIcon,
   OutlineCogIcon,
   OutlineLogoutIcon,
+  DashboardIcon,
+  ProductIcon,
+  ReportIcon,
+  WarehouseIcon,
+  ContactIcon,
+  ExpensesIcon,
+  SalesIcon,
+  PurchasesIcon,
 }
