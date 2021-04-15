@@ -10,6 +10,8 @@ const Modals = lazy(() => import('../pages/Modals'))
 const Tables = lazy(() => import('../pages/Tables'))
 const Page404 = lazy(() => import('../pages/404'))
 const Blank = lazy(() => import('../pages/Blank'))
+const CreateContact = lazy(() => import('../pages/CreateContact'))
+const Employee = lazy(() => import('../pages/Employee'))
 
 /**
  * ⚠ These are internal routes!
@@ -26,6 +28,14 @@ const routes = [
   //   path: '/dashboard', // the url
   //   component: Dashboard, // view rendered
   // },
+  {
+    path: '/contact/new',
+    component: CreateContact,
+  },
+  {
+    path: '/contact/employee',
+    component: Employee,
+  },
   {
     path: '/forms',
     component: Forms,

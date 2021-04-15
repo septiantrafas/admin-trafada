@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PageTitle from '../components/Typography/PageTitle'
-import SectionTitle from '../components/Typography/SectionTitle'
-import CTA from '../components/CTA'
+import { Link } from 'react-router-dom'
+import InfoCard from '../components/Cards/InfoCard'
+import RoundIcon from '../components/RoundIcon'
+import { PeopleIcon } from '../icons'
+
 import {
   Table,
   TableHeader,
@@ -11,7 +14,6 @@ import {
   TableFooter,
   TableContainer,
   Badge,
-  Avatar,
   Button,
   Pagination,
 } from '@windmill/react-ui'
@@ -21,31 +23,18 @@ import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
 const response2 = response.concat([])
 
-function Tables() {
-  /**
-   * DISCLAIMER: This code could be badly improved, but for the sake of the example
-   * and readability, all the logic for both table are here.
-   * You would be better served by dividing each table in its own
-   * component, like Table(?) and TableWithActions(?) hiding the
-   * presentation details away from the page view.
-   */
-
+function Employee() {
   // setup pages control for every table
-  const [pageTable1, setPageTable1] = useState(1)
   const [pageTable2, setPageTable2] = useState(1)
 
   // setup data for every table
-  const [dataTable1, setDataTable1] = useState([])
   const [dataTable2, setDataTable2] = useState([])
 
   // pagination setup
-  const resultsPerPage = 10
+  const resultsPerPage = 3
   const totalResults = response.length
 
   // pagination change control
-  function onPageChangeTable1(p) {
-    setPageTable1(p)
-  }
 
   // pagination change control
   function onPageChangeTable2(p) {
@@ -54,14 +43,6 @@ function Tables() {
 
   // on page change, load new sliced data
   // here you would make another server request for new data
-  useEffect(() => {
-    setDataTable1(
-      response.slice(
-        (pageTable1 - 1) * resultsPerPage,
-        pageTable1 * resultsPerPage,
-      ),
-    )
-  }, [pageTable1])
 
   // on page change, load new sliced data
   // here you would make another server request for new data
@@ -73,77 +54,49 @@ function Tables() {
       ),
     )
   }, [pageTable2])
-
   return (
     <>
-      <PageTitle>Tables</PageTitle>
-
-      <CTA />
-
-      <SectionTitle>Simple table</SectionTitle>
-      <TableContainer className="mb-8">
-        <Table>
-          <TableHeader>
-            <tr>
-              <TableCell>Client</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Date</TableCell>
-            </tr>
-          </TableHeader>
-          <TableBody>
-            {dataTable1.map((user, i) => (
-              <TableRow key={i}>
-                <TableCell>
-                  <div className="flex items-center text-sm">
-                    <Avatar
-                      className="hidden mr-3 md:block"
-                      src={user.avatar}
-                      alt="User avatar"
-                    />
-                    <div>
-                      <p className="font-semibold">{user.name}</p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">
-                        {user.job}
-                      </p>
-                    </div>
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">$ {user.amount}</span>
-                </TableCell>
-                <TableCell>
-                  <Badge type={user.status}>{user.status}</Badge>
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">
-                    {new Date(user.date).toLocaleDateString()}
-                  </span>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <TableFooter>
-          <Pagination
-            totalResults={totalResults}
-            resultsPerPage={resultsPerPage}
-            onChange={onPageChangeTable1}
-            label="Table navigation"
+      <PageTitle>
+        <div className="flex justify-between">
+          <div>Employee</div>
+          <div className="float-right">
+            <Button size="small" tag={Link} to="/app/contact/new">
+              new contact
+            </Button>
+          </div>
+        </div>
+      </PageTitle>
+      <hr />
+      <div className="grid gap-6 mt-4 mb-4 md:grid-cols-2 xl:grid-cols-2">
+        <InfoCard title="Open Payables" value="6389">
+          <RoundIcon
+            icon={PeopleIcon}
+            iconColorClass="text-blue-500 dark:text-blue-100"
+            bgColorClass="bg-blue-100 dark:bg-blue-500"
+            className="mr-4"
           />
-        </TableFooter>
-      </TableContainer>
+        </InfoCard>
 
-      <SectionTitle>Table with actions</SectionTitle>
+        <InfoCard title="Overdue Payables" value="6389">
+          <RoundIcon
+            icon={PeopleIcon}
+            iconColorClass="text-orange-500 dark:text-orange-100"
+            bgColorClass="bg-orange-100 dark:bg-orange-500"
+            className="mr-4"
+          />
+        </InfoCard>
+      </div>
+
       <TableContainer className="mb-8">
         <Table>
           <TableHeader>
             <tr>
-              <TableCell>Client</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Date</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell>Display name</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell>Address</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Balance</TableCell>
+              <TableCell>Action</TableCell>
             </tr>
           </TableHeader>
           <TableBody>
@@ -151,11 +104,11 @@ function Tables() {
               <TableRow key={i}>
                 <TableCell>
                   <div className="flex items-center text-sm">
-                    <Avatar
+                    {/* <Avatar
                       className="hidden mr-3 md:block"
                       src={user.avatar}
                       alt="User avatar"
-                    />
+                    /> */}
                     <div>
                       <p className="font-semibold">{user.name}</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -175,6 +128,7 @@ function Tables() {
                     {new Date(user.date).toLocaleDateString()}
                   </span>
                 </TableCell>
+                <TableCell></TableCell>
                 <TableCell>
                   <div className="flex items-center space-x-4">
                     <Button layout="link" size="icon" aria-label="Edit">
@@ -202,4 +156,4 @@ function Tables() {
   )
 }
 
-export default Tables
+export default Employee
