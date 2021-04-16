@@ -22,7 +22,8 @@ import { EditIcon, TrashIcon } from '../icons'
 import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
 const response2 = response.concat([])
-function Customer() {
+
+function Vendor() {
   // setup pages control for every table
   const [pageTable2, setPageTable2] = useState(1)
 
@@ -57,7 +58,7 @@ function Customer() {
     <>
       <PageTitle>
         <div className="flex justify-between">
-          <div>Customer</div>
+          <div>Vendor</div>
           <div className="float-right">
             <Button size="small" tag={Link} to="/app/contact/new">
               new contact
@@ -66,9 +67,8 @@ function Customer() {
         </div>
       </PageTitle>
       <hr />
-
       <div className="grid gap-6 mt-4 mb-4 md:grid-cols-2 xl:grid-cols-3">
-        <InfoCard title="Open receivables" value="6389">
+        <InfoCard title="Open Payables" value="6389">
           <RoundIcon
             icon={PeopleIcon}
             iconColorClass="text-blue-500 dark:text-blue-100"
@@ -77,7 +77,7 @@ function Customer() {
           />
         </InfoCard>
 
-        <InfoCard title="Overdue Receivables" value="6389">
+        <InfoCard title="Overdue Payables" value="6389">
           <RoundIcon
             icon={PeopleIcon}
             iconColorClass="text-orange-500 dark:text-orange-100"
@@ -165,4 +165,4 @@ function Customer() {
   )
 }
 
-export default Customer
+export default Vendor

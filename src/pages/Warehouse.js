@@ -22,7 +22,7 @@ import { EditIcon, TrashIcon } from '../icons'
 import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
 const response2 = response.concat([])
-function Customer() {
+function Warehouse() {
   // setup pages control for every table
   const [pageTable2, setPageTable2] = useState(1)
 
@@ -30,7 +30,7 @@ function Customer() {
   const [dataTable2, setDataTable2] = useState([])
 
   // pagination setup
-  const resultsPerPage = 3
+  const resultsPerPage = 5
   const totalResults = response.length
 
   // pagination change control
@@ -57,46 +57,17 @@ function Customer() {
     <>
       <PageTitle>
         <div className="flex justify-between">
-          <div>Customer</div>
+          <div>Warehouses list</div>
           <div className="float-right">
-            <Button size="small" tag={Link} to="/app/contact/new">
-              new contact
+            <Button size="small" tag={Link} to="/app/warehouse/new">
+              new warehouse
             </Button>
           </div>
         </div>
       </PageTitle>
       <hr />
 
-      <div className="grid gap-6 mt-4 mb-4 md:grid-cols-2 xl:grid-cols-3">
-        <InfoCard title="Open receivables" value="6389">
-          <RoundIcon
-            icon={PeopleIcon}
-            iconColorClass="text-blue-500 dark:text-blue-100"
-            bgColorClass="bg-blue-100 dark:bg-blue-500"
-            className="mr-4"
-          />
-        </InfoCard>
-
-        <InfoCard title="Overdue Receivables" value="6389">
-          <RoundIcon
-            icon={PeopleIcon}
-            iconColorClass="text-orange-500 dark:text-orange-100"
-            bgColorClass="bg-orange-100 dark:bg-orange-500"
-            className="mr-4"
-          />
-        </InfoCard>
-
-        <InfoCard title="Credit Note" value="6389">
-          <RoundIcon
-            icon={PeopleIcon}
-            iconColorClass="text-orange-500 dark:text-orange-100"
-            bgColorClass="bg-orange-100 dark:bg-orange-500"
-            className="mr-4"
-          />
-        </InfoCard>
-      </div>
-
-      <TableContainer className="mb-8">
+      <TableContainer className="mt-8">
         <Table>
           <TableHeader>
             <tr>
@@ -165,4 +136,4 @@ function Customer() {
   )
 }
 
-export default Customer
+export default Warehouse
