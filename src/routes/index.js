@@ -1,5 +1,4 @@
 import { lazy } from 'react'
-import CreateWarehouse from '../pages/CreateWarehouse'
 
 // use lazy for better code splitting, a.k.a. load faster
 const Dashboard = lazy(() => import('../pages/Dashboard'))
@@ -16,6 +15,13 @@ const Employee = lazy(() => import('../pages/Employee'))
 const Vendor = lazy(() => import('../pages/Vendor'))
 const Customer = lazy(() => import('../pages/Customer'))
 const Warehouse = lazy(() => import('../pages/Warehouse'))
+const CreateWarehouse = lazy(() => import('../pages/CreateWarehouse'))
+const Product = lazy(() => import('../pages/Product'))
+const CreateProduct = lazy(() => import('../pages/CreateProduct'))
+const StockAdjustment = lazy(() => import('../pages/StockAdjustment'))
+const CreateStockAdjustmen = lazy(() =>
+  import('../pages/CreateStockAdjustmen.js'),
+)
 /**
  * ⚠ These are internal routes!
  * They will be rendered inside the app, using the default `containers/Layout`.
@@ -54,6 +60,22 @@ const routes = [
   {
     path: '/warehouse/new',
     component: CreateWarehouse,
+  },
+  {
+    path: '/product',
+    component: Product,
+  },
+  {
+    path: '/product/new',
+    component: CreateProduct,
+  },
+  {
+    path: '/product/stock-adjustment',
+    component: StockAdjustment,
+  },
+  {
+    path: '/product/stock-adjustment/new',
+    component: CreateStockAdjustmen,
   },
   {
     path: '/forms',

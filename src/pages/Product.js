@@ -22,7 +22,7 @@ import { EditIcon, TrashIcon } from '../icons'
 import response from '../utils/demo/tableData'
 // make a copy of the data, for the second table
 const response2 = response.concat([])
-function Warehouse() {
+function Product() {
   // setup pages control for every table
   const [pageTable2, setPageTable2] = useState(1)
 
@@ -30,7 +30,7 @@ function Warehouse() {
   const [dataTable2, setDataTable2] = useState([])
 
   // pagination setup
-  const resultsPerPage = 5
+  const resultsPerPage = 3
   const totalResults = response.length
 
   // pagination change control
@@ -57,17 +57,69 @@ function Warehouse() {
     <>
       <PageTitle>
         <div className="flex justify-between">
-          <div>Warehouses</div>
+          <div>Product</div>
           <div className="float-right">
-            <Button size="small" tag={Link} to="/app/warehouse/new">
-              new warehouse
+            <Button
+              className="mr-4"
+              size="small"
+              tag={Link}
+              to="/app/product/new"
+            >
+              new product
+            </Button>
+            <Button
+              size="small"
+              tag={Link}
+              to="/app/product/stock-adjustment/new"
+            >
+              new stock adjustment
             </Button>
           </div>
         </div>
       </PageTitle>
       <hr />
+      <div className="grid gap-6 mt-4 mb-4 md:grid-cols-2 xl:grid-cols-4">
+        <InfoCard title="Available Stock" value="6389">
+          <RoundIcon
+            icon={PeopleIcon}
+            iconColorClass="text-blue-500 dark:text-blue-100"
+            bgColorClass="bg-blue-100 dark:bg-blue-500"
+            className="mr-4"
+          />
+        </InfoCard>
 
-      <TableContainer className="mt-8">
+        <InfoCard title="Low Stock" value="6389">
+          <RoundIcon
+            icon={PeopleIcon}
+            iconColorClass="text-orange-500 dark:text-orange-100"
+            bgColorClass="bg-orange-100 dark:bg-orange-500"
+            className="mr-4"
+          />
+        </InfoCard>
+
+        <InfoCard title="Out of Stock" value="6389">
+          <RoundIcon
+            icon={PeopleIcon}
+            iconColorClass="text-orange-500 dark:text-orange-100"
+            bgColorClass="bg-orange-100 dark:bg-orange-500"
+            className="mr-4"
+          />
+        </InfoCard>
+        <InfoCard
+          link="product/stock-adjustment"
+          title="Stock Adjustment"
+          value="6389"
+        >
+          <RoundIcon
+            icon={PeopleIcon}
+            iconColorClass="text-orange-500 dark:text-orange-100"
+            bgColorClass="bg-orange-100 dark:bg-orange-500"
+            className="mr-4"
+          />
+        </InfoCard>
+      </div>
+
+      <TableContainer className="mb-8">
         <Table>
           <TableHeader>
             <tr>
@@ -85,10 +137,10 @@ function Warehouse() {
                 <TableCell>
                   <div className="flex items-center text-sm">
                     {/* <Avatar
-                      className="hidden mr-3 md:block"
-                      src={user.avatar}
-                      alt="User avatar"
-                    /> */}
+                className="hidden mr-3 md:block"
+                src={user.avatar}
+                alt="User avatar"
+              /> */}
                     <div>
                       <p className="font-semibold">{user.name}</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -136,4 +188,4 @@ function Warehouse() {
   )
 }
 
-export default Warehouse
+export default Product
