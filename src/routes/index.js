@@ -22,6 +22,7 @@ const StockAdjustment = lazy(() => import('../pages/StockAdjustment'))
 const CreateStockAdjustmen = lazy(() =>
   import('../pages/CreateStockAdjustmen.js'),
 )
+const Sales = lazy(() => import('../pages/Sales'))
 /**
  * ⚠ These are internal routes!
  * They will be rendered inside the app, using the default `containers/Layout`.
@@ -76,6 +77,10 @@ const routes = [
   {
     path: '/product/stock-adjustment/new',
     component: CreateStockAdjustmen,
+  },
+  {
+    path: '/sales',
+    component: Sales,
   },
   {
     path: '/forms',
