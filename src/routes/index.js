@@ -19,9 +19,10 @@ const CreateWarehouse = lazy(() => import('../pages/CreateWarehouse'))
 const Product = lazy(() => import('../pages/Product'))
 const CreateProduct = lazy(() => import('../pages/CreateProduct'))
 const StockAdjustment = lazy(() => import('../pages/StockAdjustment'))
-const CreateStockAdjustmen = lazy(() =>
-  import('../pages/CreateStockAdjustmen.js'),
+const CreateStockAdjustment = lazy(() =>
+  import('../pages/CreateStockAdjustment'),
 )
+const InviteUser = lazy(() => import('../pages/InviteUser.js'))
 const Sales = lazy(() => import('../pages/Sales'))
 /**
  * ⚠ These are internal routes!
@@ -34,6 +35,10 @@ const Sales = lazy(() => import('../pages/Sales'))
  * `routes/sidebar.js`
  */
 const routes = [
+  {
+    path: '/new-user', // the url
+    component: InviteUser, // view rendered
+  },
   {
     path: '/dashboard', // the url
     component: Dashboard, // view rendered
@@ -76,7 +81,7 @@ const routes = [
   },
   {
     path: '/product/stock-adjustment/new',
-    component: CreateStockAdjustmen,
+    component: CreateStockAdjustment,
   },
   {
     path: '/sales',

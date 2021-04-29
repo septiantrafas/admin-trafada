@@ -35,7 +35,7 @@ const ConditionalInput = ({ control, index, register, field }) => {
   )
 }
 
-function CreateStockAdjustmen() {
+function CreateStockAdjustment() {
   const { handleSubmit, control, register } = useForm()
   const { fields, append, remove } = useFieldArray({
     control,
@@ -189,4 +189,4 @@ function CreateStockAdjustmen() {
   )
 }
 
-export default CreateStockAdjustmen
+export default CreateStockAdjustment

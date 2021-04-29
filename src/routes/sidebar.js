@@ -59,6 +59,11 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/app/new-user',
+    icon: 'PeopleIcon',
+    name: 'Invite new user',
+  },
   // {
   //   path: '/app/cards',
   //   icon: 'CardsIcon',
