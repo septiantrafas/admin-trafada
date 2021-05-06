@@ -31,8 +31,7 @@ function InviteUser() {
     if (canSave)
       try {
         setAddRequestStatus('pending')
-        await dispatch(createNewUser(data))
-        const resultAction = await dispatch(updateUser(data))
+        const resultAction = await dispatch(createNewUser(data))
         unwrapResult(resultAction)
       } catch (e) {
         console.log(e)
@@ -56,11 +55,6 @@ function InviteUser() {
               {...register('email', { required: true })}
               type="email"
             />
-            {errors.exampleRequired && <span>This field is required</span>}
-          </Label>
-          <Label>
-            <span>Role</span>
-            <Input defaultValue="" {...register('role', { required: true })} />
             {errors.exampleRequired && <span>This field is required</span>}
           </Label>
           <Label>

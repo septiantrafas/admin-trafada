@@ -42,6 +42,11 @@ const routes = [
     name: 'Product',
   },
   {
+    path: '/app/shipment',
+    icon: 'MailIcon',
+    name: 'Shipment',
+  },
+  {
     icon: 'ContactIcon',
     name: 'Contact',
     routes: [

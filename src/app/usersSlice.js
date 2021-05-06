@@ -49,7 +49,6 @@ export const createNewUser = createAsyncThunk(
     const response = await supabase.auth.signUp({
       email: data.email,
       password: data.password,
-      role: data.role,
     })
     return response
   },

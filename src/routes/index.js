@@ -24,6 +24,9 @@ const CreateStockAdjustment = lazy(() =>
 )
 const InviteUser = lazy(() => import('../pages/InviteUser.js'))
 const Sales = lazy(() => import('../pages/Sales'))
+const Shipment = lazy(() => import('../pages/Shipment'))
+const Purchases = lazy(() => import('../pages/Purchases'))
+const Expenses = lazy(() => import('../pages/Expenses'))
 /**
  * ⚠ These are internal routes!
  * They will be rendered inside the app, using the default `containers/Layout`.
@@ -38,6 +41,18 @@ const routes = [
   {
     path: '/new-user', // the url
     component: InviteUser, // view rendered
+  },
+  {
+    path: '/purchases', // the url
+    component: Purchases, // view rendered
+  },
+  {
+    path: '/expenses', // the url
+    component: Expenses, // view rendered
+  },
+  {
+    path: '/shipment', // the url
+    component: Shipment, // view rendered
   },
   {
     path: '/dashboard', // the url
