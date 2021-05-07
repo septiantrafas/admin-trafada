@@ -1,6 +1,5 @@
 import { lazy } from 'react'
 
-// use lazy for better code splitting, a.k.a. load faster
 const Dashboard = lazy(() => import('../pages/Dashboard'))
 const Forms = lazy(() => import('../pages/Forms'))
 const Cards = lazy(() => import('../pages/Cards'))
@@ -27,36 +26,27 @@ const Sales = lazy(() => import('../pages/Sales'))
 const Shipment = lazy(() => import('../pages/Shipment'))
 const Purchases = lazy(() => import('../pages/Purchases'))
 const Expenses = lazy(() => import('../pages/Expenses'))
-/**
- * ⚠ These are internal routes!
- * They will be rendered inside the app, using the default `containers/Layout`.
- * If you want to add a route to, let's say, a landing page, you should add
- * it to the `App`'s router, exactly like `Login`, `CreateAccount` and other pages
- * are routed.
- *
- * If you're looking for the links rendered in the SidebarContent, go to
- * `routes/sidebar.js`
- */
+
 const routes = [
   {
-    path: '/new-user', // the url
-    component: InviteUser, // view rendered
+    path: '/new-user',
+    component: InviteUser,
   },
   {
-    path: '/purchases', // the url
-    component: Purchases, // view rendered
+    path: '/purchases',
+    component: Purchases,
   },
   {
-    path: '/expenses', // the url
-    component: Expenses, // view rendered
+    path: '/expenses',
+    component: Expenses,
   },
   {
-    path: '/shipment', // the url
-    component: Shipment, // view rendered
+    path: '/shipment',
+    component: Shipment,
   },
   {
-    path: '/dashboard', // the url
-    component: Dashboard, // view rendered
+    path: '/dashboard',
+    component: Dashboard,
   },
   {
     path: '/contact/new',

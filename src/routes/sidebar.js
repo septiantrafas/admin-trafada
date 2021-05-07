@@ -22,6 +22,11 @@ const routes = [
     name: 'Sales',
   },
   {
+    path: '/app/shipment',
+    icon: 'MailIcon',
+    name: 'Shipment',
+  },
+  {
     path: '/app/purchases',
     icon: 'PurchasesIcon',
     name: 'Purchases',
@@ -40,11 +45,6 @@ const routes = [
     path: '/app/product',
     icon: 'ProductIcon',
     name: 'Product',
-  },
-  {
-    path: '/app/shipment',
-    icon: 'MailIcon',
-    name: 'Shipment',
   },
   {
     icon: 'ContactIcon',
